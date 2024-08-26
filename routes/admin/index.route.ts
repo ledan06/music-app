@@ -3,6 +3,7 @@ import { dashboardRoutes } from "./dashboard.route";
 import { systemConfig } from "../../config/config";
 import { topicRoutes } from "./topic.route";
 import { songRoutes } from "./songs.route";
+import { uploadRoutes } from "./upload.route";
 
 const adminRoutes = (app: Express): void => {
     const PATH_ADMIN = `/${systemConfig.prefixAdmin}`
@@ -13,6 +14,7 @@ const adminRoutes = (app: Express): void => {
 
     app.use(`${PATH_ADMIN}/songs`, songRoutes)
 
+    app.use(`${PATH_ADMIN}/upload`, uploadRoutes)
 }
 
 export default adminRoutes
